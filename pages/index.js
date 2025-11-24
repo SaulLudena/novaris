@@ -1,78 +1,77 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+import Head from "next/head";
+import Topnav from "../src/components/topnav/topnav";
+import Hero from "../src/components/hero/hero";
+import Values from "../src/components/values/values";
+import Ourservices from "../src/components/ourservices/ourservices";
+import Ourteam from "../src/components/ourteam/ourteam";
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black`}
-    >
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Head>
+        <title>Novaris - Clínica dental</title>
+
+        <meta
+          name="description"
+          content="Novaris es una clínica odontológica en Lima especializada en estética dental, implantes, ortodoncia, endodoncia y rehabilitación oral. Atención profesional y tecnología moderna para cuidar tu sonrisa."
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the index.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs/pages/getting-started?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <meta
+          name="keywords"
+          content="clínica dental, dentista en Lima, odontología, implantes dentales, ortodoncia, estética dental, carillas, blanqueamiento dental, endodoncia, rehabilitación oral, Novaris"
+        />
+
+        <meta name="author" content="Clínica Odontológica Novaris" />
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* OPEN GRAPH */}
+        <meta property="og:title" content="Novaris - Clínica Odontológica" />
+        <meta
+          property="og:description"
+          content="Expertos en estética dental, ortodoncia e implantes. Tu sonrisa en manos profesionales."
+        />
+        <meta property="og:image" content="/img/Logo.png" />
+        <meta property="og:url" content="https://novaris.pe" />
+        <meta property="og:type" content="website" />
+
+        {/* TWITTER */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Novaris - Clínica Odontológica" />
+        <meta
+          name="twitter:description"
+          content="Cuidado dental profesional con tecnología moderna."
+        />
+        <meta name="twitter:image" content="/img/Logo.png" />
+
+        {/* SEO AVANZADO - SCHEMA.ORG */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Dentist",
+              name: "Clínica Odontológica Novaris",
+              image: "https://novaris.pe/img/Logo.png",
+              url: "https://novaris.pe",
+              telephone: "+51 999 999 999",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Av. Ejemplo 123",
+                addressLocality: "Lima",
+                addressRegion: "Lima",
+                addressCountry: "PE",
+              },
+              description:
+                "Clínica odontológica especializada en estética dental, implantes y ortodoncia.",
+              openingHours: "Mo-Sa 09:00-20:00",
+              priceRange: "$$",
+            }),
+          }}
+        />
+      </Head>
+      <Topnav />
+      <Hero />
+      <Values />
+      <Ourservices />
+      <Ourteam />
+    </>
   );
 }

@@ -1,0 +1,51 @@
+import Image from "next/image";
+import React from "react";
+
+export default function Serviceitem({ service, i }) {
+  return (
+    <li
+      key={i}
+      className="rounded-2xl shadow-md transition-all flex flex-col relative"
+    >
+      <div
+        className="w-16 h-16 rounded-full bg-blue-500 absolute top-50 left-4 text-black border-4 border-white z-10 
+                   flex items-center justify-center "
+      >
+        <span className="font-bold text-white text-2xl">{service.id}</span>
+      </div>
+
+      <div className="w-full h-56 relative ">
+        <div className=" top-0  absolute z-3 w-full h-full bg-linear-to-t opacity-20 from-black to-zinc-500 rounded-t-xl"></div>
+        <Image
+          src={service.imageUrl}
+          alt={service.serviceName}
+          fill
+          className="object-cover rounded-t-xl"
+        />
+      </div>
+
+      {/* Contenido (Texto) - Ya no necesita 'relative' o 'pt-10' si el número se movió afuera */}
+      <div className="flex-1 flex flex-col justify-between">
+        {/* Contenido principal con descripción */}
+        <div className="px-5 pt-12 flex flex-col gap-3">
+          <span className="font-bold text-3xl">{service.serviceName}</span>
+
+          <p className="text-lg opacity-65 leading-5">{service.description}</p>
+        </div>
+
+        {/* Contenedor del enlace "Saber más" y la barra azul */}
+        <div className="w-full ">
+          <a
+            href=""
+            className="block px-5 py-5 text-[#2875a2] border-gray-200 hover:underline "
+          >
+            Saber más -&gt;
+          </a>
+
+          {/* La barra azul en la parte MÁS inferior */}
+          <div className="bg-[#29b0ff] w-full h-3 rounded-b-xl"></div>
+        </div>
+      </div>
+    </li>
+  );
+}
