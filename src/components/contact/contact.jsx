@@ -4,7 +4,9 @@ import { FaFacebookF } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
+
 const contactInfo = [
+  // ... (Datos omitidos por brevedad, se mantienen sin cambios)
   {
     id: 1,
     name: "Facebook",
@@ -45,22 +47,30 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <div className="w-[85%] max-w-[1900px] m-auto flex my-40 flex-col">
-      <div className="mb-15">
-        <div className="grid gap-5">
-          <h2 className="text-2xl tracking-widest">CONTACTO</h2>
-          <span className="text-7xl font-bold leading-[0.6]">
-            <span className="text-[#53AC40] font-bold text-7xl">
+    // Reducimos el margen vertical en móvil (my-20)
+    <div
+      className="w-[85%] max-w-[1900px] mx-auto flex pt-36 md:pt-40 flex-col"
+      id="contacto"
+    >
+      <div className="mb-10 md:mb-16">
+        <div className="grid gap-3 md:gap-5">
+          <h2 className="text-xl md:text-2xl tracking-widest text-gray-600">
+            CONTACTO
+          </h2>
+
+          {/* 🛑 TÍTULO PRINCIPAL: Ajuste de tamaño y leading */}
+          <span className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] md:leading-[0.8]">
+            <span className="text-[#53AC40] font-bold">
               Ubicanos en nuestras
             </span>{" "}
-            <br />
+            <br className="hidden sm:inline" />
             Redes sociales.
           </span>
         </div>
       </div>
 
-      {/* 🛑 AQUÍ se renderizan las tarjetas */}
-      <ul className="grid grid-cols-4 gap-10 mt-10">
+      {/* 🛑 CUADRÍCULA: Escala de 1 a 2 a 4 columnas */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 mt-6 md:mt-10">
         {contactInfo.map((contactitem, i) => (
           <Contactitem key={i} contactitem={contactitem} />
         ))}

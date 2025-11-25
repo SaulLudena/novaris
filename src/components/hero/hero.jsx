@@ -1,10 +1,13 @@
 import Image from "next/image";
-import React from "react";
-
+import { FaWhatsapp } from "react-icons/fa";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 export default function Hero() {
   return (
     // Contenedor principal: Menos padding arriba en móvil (pt-32)
-    <div className="w-[85%] max-w-[1900px] mx-auto pt-32 lg:pt-52 pb-20 flex items-center">
+    <div
+      className="w-[85%] max-w-[1900px] mx-auto pt-32 lg:pt-52 pb-20 flex items-center"
+      id="#"
+    >
       <div className="w-full grid grid-cols-12 gap-8 xl:gap-4">
         {/* IZQUIERDA (Contenido / Texto) */}
         {/* El texto ocupa 12 columnas hasta el breakpoint XL */}
@@ -29,16 +32,20 @@ export default function Hero() {
             {" "}
             {/* 🛑 CAMBIADO DE LG A XL */}
             <a
-              href=""
-              className="bg-[#21a2ec] text-white rounded-full px-6 py-3 text-sm sm:text-base"
+              href="https://wa.me/51985985431?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cita%20en%20su%20consultorio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#21a2ec] text-white rounded-full px-6 py-3 text-sm sm:text-base flex items-center gap-2"
             >
+              <FaWhatsapp />
               Agenda tu cita
             </a>
             <a
-              href=""
-              className="bg-[#e3e3e3] rounded-full px-6 py-3 text-sm sm:text-base"
+              href="#servicios"
+              className="bg-[#e3e3e3] rounded-full px-6 py-3 text-sm sm:text-base flex items-center gap-2"
             >
-              Ver servicios →
+              <FaMagnifyingGlass />
+              Ver servicios
             </a>
           </div>
           {/* Estadísticas */}

@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import Serviceitem from "./serviceitem"; // Asumiendo que esta ruta es correcta
 import React from "react";
 
@@ -64,7 +65,10 @@ const services = [
 export default function Ourservices() {
   return (
     // Reducimos el margen superior en móvil (mt-20)
-    <div className="w-[85%] max-w-[1900px] mx-auto flex mt-20 md:mt-40 flex-col">
+    <div
+      className="w-[85%] max-w-[1900px] mx-auto flex pt-36 md:pt-40 flex-col"
+      id="servicios"
+    >
       {/* 1. 🛑 ENCABEZADO: De flex horizontal a flex-col en móvil */}
       <div className="flex flex-col md:flex-row justify-between mb-10 md:mb-16">
         {/* Título principal */}
@@ -86,9 +90,12 @@ export default function Ourservices() {
         {/* Botón */}
         <div className="flex items-start md:items-end">
           <a
-            href=""
-            className="bg-[#21a2ec] text-white rounded-full px-6 py-3 text-sm sm:text-base whitespace-nowrap"
+            href="https://wa.me/51985985431?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cita%20en%20su%20consultorio."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#21a2ec] text-white rounded-full px-6 py-3 text-sm sm:text-base flex items-center gap-2"
           >
+            <FaWhatsapp />
             Agenda tu cita
           </a>
         </div>

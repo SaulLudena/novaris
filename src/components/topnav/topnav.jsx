@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const menuItems = [
-  { name: "Inicio", link: "/" },
-  { name: "Servicios", link: "/about" },
-  { name: "Nuestro equipo", link: "/contact" },
-  { name: "Testimonios", link: "/login" },
-  { name: "Contacto", link: "" },
+  { name: "Inicio", link: "#" },
+  { name: "Servicios", link: "#servicios" },
+  { name: "Nuestro equipo", link: "#equipo" },
+  { name: "Testimonios", link: "#testimonios" },
+  { name: "Contacto", link: "#contacto" },
 ];
 
 export default function Topnav() {
@@ -77,12 +77,14 @@ export default function Topnav() {
           </ul>
 
           {/* BOTÓN DESKTOP: Visible en LG y superior */}
-          <Link
-            href="/reserva"
+          <a
+            href="https://wa.me/51985985431?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cita%20en%20su%20consultorio."
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden lg:block border-2 border-black px-6 lg:px-8 py-2 rounded-full hover:border-blue-600 hover:text-blue-600 transition text-sm lg:text-base" // 🛑 CAMBIADO DE md:block a lg:block
           >
             Reserva ahora
-          </Link>
+          </a>
         </div>
 
         {/* MENÚ MÓVIL: Oculto en LG y superior */}
@@ -104,13 +106,15 @@ export default function Topnav() {
                 </li>
               ))}
               <li>
-                <Link
-                  href="/reserva"
+                <a
+                  href="https://wa.me/51985985431?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20una%20cita%20en%20su%20consultorio."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={toggleMenu}
                   className="mt-6 block text-center border-2 border-black px-8 py-2 rounded-full hover:border-blue-600 hover:text-blue-600 transition"
                 >
                   Reserva ahora
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

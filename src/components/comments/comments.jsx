@@ -1,14 +1,17 @@
 import Commentitem from "./commentitem";
 export default function Comments() {
   return (
-    <div className="w-[85%] max-w-[1900px] m-auto flex mt-40  justify-between items-center max-2xl:flex-col ">
+    <div
+      className="w-[85%] max-w-[1900px] m-auto flex pt-36 md:pt-40   justify-between items-center max-2xl:flex-col "
+      id="testimonios"
+    >
       <div className="mb-15  w-[50%] max-2xl:w-full">
         <div className="grid gap-5">
-          <h2 className="text-2xl tracking-widest">TESTIMONIOS</h2>
-          <span className="text-7xl font-bold leading-[0.6]">
-            <span className="text-[#E3AA00] font-bold text-7xl">
-              Empatizamos con
-            </span>{" "}
+          <h2 className="text-xl md:text-2xl tracking-widest text-gray-600">
+            TESTIMONIOS
+          </h2>
+          <span className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] md:leading-[0.8]">
+            <span className="text-[#E3AA00] font-bold ">Empatizamos con</span>{" "}
             <br /> Tus comentarios.
           </span>
         </div>

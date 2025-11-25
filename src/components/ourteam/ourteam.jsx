@@ -3,7 +3,10 @@ import Teamitem from "./teamitem";
 export default function Ourteam() {
   return (
     // Reducimos el margen superior en móvil (mt-20)
-    <div className="w-[85%] max-w-[1900px] mx-auto flex mt-20 md:mt-40 flex-col">
+    <div
+      className="w-[85%] max-w-[1900px] mx-auto flex pt-36 md:pt-40 flex-col"
+      id="equipo"
+    >
       <div className="mb-10 md:mb-16">
         <div className="grid gap-3 md:gap-5">
           {/* 🛑 TÍTULO SECUNDARIO: Ajuste de tamaño */}

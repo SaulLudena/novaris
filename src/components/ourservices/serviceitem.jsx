@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Serviceitem({ service, i }) {
   return (
@@ -45,10 +45,15 @@ export default function Serviceitem({ service, i }) {
         {/* Contenedor del enlace "Saber más" y la barra azul */}
         <div className="w-full ">
           <a
-            href=""
-            className="block px-5 py-5 text-[#2875a2] border-gray-200 hover:underline text-sm sm:text-base" // 🛑 TEXTO ENLACE: Ajustado a responsive (sm en móvil, base en sm+)
+            href={`https://wa.me/51985985431?text=Hola,%20me%20gustaría%20saber%20sobre%20el%20servicio%20de%20${encodeURIComponent(
+              service.serviceName
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" px-5 py-5 text-[#2875a2] border-gray-200 hover:underline text-sm sm:text-base flex gap-2 items-center" // 🛑 TEXTO ENLACE: Ajustado a responsive (sm en móvil, base en sm+)
           >
-            Saber más -&gt;
+            <FaWhatsapp />
+            Saber más...
           </a>
 
           {/* La barra azul en la parte MÁS inferior */}

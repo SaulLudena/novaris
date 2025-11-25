@@ -17,7 +17,7 @@ export default function Contactitem({ contactitem, i }) {
           </p>
         </div>
 
-        <div className="h-4 bg-[#53AC40] transition duration-300  rounded-b-xl"></div>
+        <div className="h-3 bg-[#53AC40] transition duration-300  rounded-b-xl"></div>
       </a>
     </li>
   );
