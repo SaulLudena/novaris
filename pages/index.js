@@ -4,6 +4,9 @@ import Hero from "../src/components/hero/hero";
 import Values from "../src/components/values/values";
 import Ourservices from "../src/components/ourservices/ourservices";
 import Ourteam from "../src/components/ourteam/ourteam";
+import Comments from "../src/components/comments/comments";
+import Contact from "../src/components/contact/contact";
+import Footer from "@/src/components/footer/footer";
 export default function Home() {
   return (
     <>
@@ -72,6 +75,9 @@ export default function Home() {
       <Values />
       <Ourservices />
       <Ourteam />
+      <Comments />
+      <Contact />
+      <Footer />
     </>
   );
 }

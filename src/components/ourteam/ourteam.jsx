@@ -2,19 +2,25 @@ import React from "react";
 import Teamitem from "./teamitem";
 export default function Ourteam() {
   return (
-    <div className="w-[85%] max-w-[1900px] m-auto flex mt-40  flex-col">
-      <div className="mb-15">
-        <div className="grid gap-5">
-          <h2 className="text-2xl tracking-widest">NUESTROS EQUIPO</h2>
-          <span className="text-7xl font-bold leading-[0.6]">
-            <span className="text-[#29B2FF] font-bold text-7xl">
-              Tu sonrisa
-            </span>{" "}
-            <br /> En las mejores manos.
+    // Reducimos el margen superior en móvil (mt-20)
+    <div className="w-[85%] max-w-[1900px] mx-auto flex mt-20 md:mt-40 flex-col">
+      <div className="mb-10 md:mb-16">
+        <div className="grid gap-3 md:gap-5">
+          {/* 🛑 TÍTULO SECUNDARIO: Ajuste de tamaño */}
+          <h2 className="text-xl md:text-2xl tracking-widest text-gray-600">
+            NUESTRO EQUIPO
+          </h2>
+
+          {/* 🛑 TÍTULO PRINCIPAL: Ajuste de tamaño y leading */}
+          <span className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] md:leading-[0.8]">
+            <span className="text-[#29B2FF] font-bold">Tu sonrisa</span>{" "}
+            <br className="hidden sm:inline" /> En las mejores manos.
           </span>
         </div>
       </div>
-      <ul className="grid grid-cols-3 gap-10">
+
+      {/* 🛑 LISTA DE MIEMBROS: Escala de 1 a 2 a 3 columnas */}
+      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10">
         {teamMembers.map((teammember, i) => (
           <Teamitem key={i} member={teammember} />
         ))}

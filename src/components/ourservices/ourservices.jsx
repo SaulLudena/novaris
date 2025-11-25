@@ -1,33 +1,7 @@
-import Serviceitem from "./serviceitem";
+import Serviceitem from "./serviceitem"; // Asumiendo que esta ruta es correcta
+import React from "react";
 
-export default function Ourservices() {
-  return (
-    <div className="w-[85%] max-w-[1900px] m-auto flex mt-40  flex-col">
-      <div className="flex  justify-between  mb-15">
-        <div className="grid gap-5">
-          <h2 className="text-2xl tracking-widest">NUESTROS SERVICIOS</h2>
-          <span className="text-7xl font-bold leading-[0.6]">
-            <span className="text-[#53AC40] font-bold text-7xl">
-              Cuidado dental
-            </span>{" "}
-            <br /> Sonrisa perfecta.
-          </span>
-        </div>
-        <div className="flex items-end">
-          <a href="" className="bg-[#21a2ec] text-white rounded-full px-8 py-3">
-            Agenda tu cita
-          </a>
-        </div>
-      </div>
-      <ul className="grid grid-cols-3 gap-10">
-        {services.map((service, i) => (
-          <Serviceitem key={i} service={service} />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
+// Datos de servicios (manteniendo el mismo array)
 const services = [
   {
     id: 1,
@@ -86,3 +60,46 @@ const services = [
     imageUrl: "/img/services/8.png",
   },
 ];
+
+export default function Ourservices() {
+  return (
+    // Reducimos el margen superior en móvil (mt-20)
+    <div className="w-[85%] max-w-[1900px] mx-auto flex mt-20 md:mt-40 flex-col">
+      {/* 1. 🛑 ENCABEZADO: De flex horizontal a flex-col en móvil */}
+      <div className="flex flex-col md:flex-row justify-between mb-10 md:mb-16">
+        {/* Título principal */}
+        <div className="grid gap-3 md:gap-5 mb-6 md:mb-0">
+          <h2 className="text-xl md:text-2xl tracking-widest ">
+            NUESTROS SERVICIOS
+          </h2>{" "}
+          {/* 🛑 Fuente más pequeña */}
+          <span className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] md:leading-[0.8]">
+            {" "}
+            {/* 🛑 Tamaño de fuente y leading ajustados */}
+            <span className="text-[#53AC40] font-bold">
+              Cuidado dental
+            </span>{" "}
+            <br className="hidden sm:inline" /> Sonrisa perfecta.
+          </span>
+        </div>
+
+        {/* Botón */}
+        <div className="flex items-start md:items-end">
+          <a
+            href=""
+            className="bg-[#21a2ec] text-white rounded-full px-6 py-3 text-sm sm:text-base whitespace-nowrap"
+          >
+            Agenda tu cita
+          </a>
+        </div>
+      </div>
+
+      {/* 2. 🛑 LISTA DE SERVICIOS: Escala de 1 a 2 a 3 columnas */}
+      <ul className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-10">
+        {services.map((service, i) => (
+          <Serviceitem key={i} service={service} />
+        ))}
+      </ul>
+    </div>
+  );
+}

@@ -9,13 +9,16 @@ export default function Serviceitem({ service, i }) {
     >
       <div
         className="w-16 h-16 rounded-full bg-blue-500 absolute top-50 left-4 text-black border-4 border-white z-10 
-                   flex items-center justify-center "
+                   flex items-center justify-center "
       >
-        <span className="font-bold text-white text-2xl">{service.id}</span>
+        {/* 🛑 TEXTO ID: Ajustado a responsive (xl en móvil, 2xl en sm+) */}
+        <span className="font-bold text-white text-xl sm:text-2xl  w-full flex h-full items-center justify-center">
+          {service.id}
+        </span>
       </div>
 
       <div className="w-full h-56 relative ">
-        <div className=" top-0  absolute z-3 w-full h-full bg-linear-to-t opacity-20 from-black to-zinc-500 rounded-t-xl"></div>
+        <div className=" top-0  absolute z-3 w-full h-full bg-linear-to-t opacity-20 from-black to-zinc-500 rounded-t-xl"></div>
         <Image
           src={service.imageUrl}
           alt={service.serviceName}
@@ -24,20 +27,26 @@ export default function Serviceitem({ service, i }) {
         />
       </div>
 
-      {/* Contenido (Texto) - Ya no necesita 'relative' o 'pt-10' si el número se movió afuera */}
+      {/* Contenido (Texto) */}
       <div className="flex-1 flex flex-col justify-between">
         {/* Contenido principal con descripción */}
         <div className="px-5 pt-12 flex flex-col gap-3">
-          <span className="font-bold text-3xl">{service.serviceName}</span>
+          {/* 🛑 TÍTULO DEL SERVICIO: Ajustado a responsive (2xl en móvil, 3xl en sm+) */}
+          <span className="font-bold text-2xl sm:text-3xl">
+            {service.serviceName}
+          </span>
 
-          <p className="text-lg opacity-65 leading-5">{service.description}</p>
+          {/* 🛑 DESCRIPCIÓN: Ajustado a responsive (base en móvil, lg en sm+) */}
+          <p className="text-base sm:text-lg opacity-65 leading-5">
+            {service.description}
+          </p>
         </div>
 
         {/* Contenedor del enlace "Saber más" y la barra azul */}
         <div className="w-full ">
           <a
             href=""
-            className="block px-5 py-5 text-[#2875a2] border-gray-200 hover:underline "
+            className="block px-5 py-5 text-[#2875a2] border-gray-200 hover:underline text-sm sm:text-base" // 🛑 TEXTO ENLACE: Ajustado a responsive (sm en móvil, base en sm+)
           >
             Saber más -&gt;
           </a>
