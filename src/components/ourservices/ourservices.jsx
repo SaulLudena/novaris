@@ -69,20 +69,14 @@ export default function Ourservices() {
       className="w-[85%] max-w-[1900px] mx-auto flex pt-36 md:pt-40 flex-col"
       id="servicios"
     >
-      {/* 1. 🛑 ENCABEZADO: De flex horizontal a flex-col en móvil */}
       <div className="flex flex-col md:flex-row justify-between mb-10 md:mb-16">
-        {/* Título principal */}
         <div className="grid gap-3 md:gap-5 mb-6 md:mb-0">
           <h2 className="text-xl md:text-2xl tracking-widest ">
             NUESTROS SERVICIOS
-          </h2>{" "}
-          {/* 🛑 Fuente más pequeña */}
+          </h2>
+
           <span className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1] md:leading-[0.8]">
-            {" "}
-            {/* 🛑 Tamaño de fuente y leading ajustados */}
-            <span className="text-[#53AC40] font-bold">
-              Cuidado dental
-            </span>{" "}
+            <span className="text-[#53AC40] font-bold">Cuidado dental</span>
             <br className="hidden sm:inline" /> Sonrisa perfecta.
           </span>
         </div>

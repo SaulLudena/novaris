@@ -1,3 +1,10 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+.custom-pagination .swiper-pagination {
+  bottom: -25px !important;
+}
 /* ===========================
    FUENTES LOCALES PRODUCT SANS
    =========================== */
