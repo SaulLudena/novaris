@@ -1,4 +1,6 @@
 import { TbDental } from "react-icons/tb";
+import { FaShieldAlt, FaRegStar } from "react-icons/fa";
+
 import React from "react";
 
 export default function Values() {
@@ -12,13 +14,13 @@ export default function Values() {
     {
       title: "Responsabilidad",
       text: `Nos aseguramos de brindarte un servicio transparente y seguro.`,
-      icon: <TbDental className="text-4xl sm:text-7xl" />,
+      icon: <FaShieldAlt className="text-4xl sm:text-7xl" />,
       color: "#0087C6",
     },
     {
       title: "Innovación",
       text: `Trabajamos con tecnología de última generación para tu bienestar.`,
-      icon: <TbDental className="text-4xl sm:text-7xl" />,
+      icon: <FaRegStar className="text-4xl sm:text-7xl" />,
       color: "#7A00E6",
     },
   ];
